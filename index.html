@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walksoft — умные роботы для образования</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: #0b0f1f; color: #eee; line-height:1.6; }
+        .container { max-width:1100px; margin:0 auto; padding:0 20px; }
+        header { padding:40px 0; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a3050; }
+        .logo { font-size:28px; font-weight:700; color:#00d4ff; }
+        .hero { display:flex; flex-direction:column; align-items:center; text-align:center; padding:80px 0 60px; }
+        .hero h1 { font-size:48px; font-weight:800; background:linear-gradient(135deg,#00d4ff,#7b61ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:20px; }
+        .hero p { font-size:20px; max-width:600px; color:#aab; margin-bottom:40px; }
+        .btn { display:inline-block; background:#00d4ff; color:#0b0f1f; padding:16px 40px; border-radius:40px; font-weight:700; text-decoration:none; transition:0.3s; }
+        .btn:hover { background:#7b61ff; color:#fff; transform:scale(1.05); }
+        .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; padding:60px 0; }
+        .feature { background:#1a1f33; padding:30px; border-radius:16px; border-left:4px solid #00d4ff; }
+        .feature h3 { color:#00d4ff; margin-bottom:10px; }
+        .video-block { background:#1a1f33; border-radius:16px; padding:30px; margin:40px 0; text-align:center; }
+        .video-block iframe { width:100%; max-width:560px; height:315px; border:none; border-radius:12px; }
+        .form-block { background:#1a1f33; border-radius:16px; padding:40px; margin:40px 0; text-align:center; }
+        .form-block input { padding:14px 20px; border-radius:40px; border:none; width:260px; margin-right:12px; background:#2a3050; color:#fff; }
+        .form-block input::placeholder { color:#889; }
+        .footer { text-align:center; padding:30px 0; border-top:1px solid #2a3050; color:#667; font-size:14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Walksoft</div>
+            <div>Роботы для образования</div>
+        </header>
+        <section class="hero">
+            <h1>Промышленная точность за бюджет студенческого проекта</h1>
+            <p>Разрабатываем открытую робототехническую платформу для обучения и прототипирования. Работаем над цифровым двойником кобота.</p>
+            <a href="#form" class="btn">Хочу узнать о запуске</a>
+        </section>
+        <section class="features">
+            <div class="feature"><h3>⚡ Точность</h3>Повторяемость позиционирования 0.1 мм — достаточно для пайки и 3D-печати.</div>
+            <div class="feature"><h3>🖥️ Простота</h3>Управление через веб-интерфейс, настройка за 5 минут без программирования ПЛК.</div>
+            <div class="feature"><h3>🔓 Открытость</h3>3D-модели и схемы в открытом доступе — вы можете модернизировать руку под свои задачи.</div>
+        </section>
+        <div class="video-block">
+            <h2 style="margin-bottom:20px;">Виртуальный прототип (Digital Twin)</h2>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <p style="margin-top:14px; color:#889;">Замена: здесь будет ваше видео работы модели в симуляции.</p>
+        </div>
+        <div class="form-block" id="form">
+            <h2 style="margin-bottom:16px;">Оставьте заявку</h2>
+            <p style="margin-bottom:24px; color:#aab;">Мы ищем первых партнёров для тестирования. Напишите нам.</p>
+            <form action="#">
+                <input type="text" placeholder="Ваше имя" required />
+                <input type="email" placeholder="Email или телефон" required />
+                <button type="submit" class="btn" style="border:none; cursor:pointer;">Стать партнёром</button>
+            </form>
+        </div>
+        <footer class="footer">
+            &copy; 2026, Walksoft. Все права защищены.
+        </footer>
+    </div>
+</body>
+</html>
