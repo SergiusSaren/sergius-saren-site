@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    
+    <script>
+  // Замени 'secret2026' на свой уникальный ключ
+  if (window.location.search !== '?key=secret2026') {
+    document.body.innerHTML = '<div style="color:white;text-align:center;padding:100px;">Доступ запрещён. Сайт в разработке.</div>';
+    throw new Error('Access denied'); // останавливает дальнейшее выполнение
+  }
+</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поморсофт — интеллектуальная робототехника | Скоро открытие</title>
