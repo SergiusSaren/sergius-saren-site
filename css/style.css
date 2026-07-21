@@ -202,10 +202,6 @@ footer a {
     min-height: 1.3em;      /* сохраняет высоту строки даже без текста */
     vertical-align: top;
 }
-/* Уже существующий стиль .hero h1 — просто добавляем min-height */
-.hero h1 {
-    min-height: 2.6em;      /* примерно на две строки, чтобы не сжимался */
-}
 
 /* Адаптив */
 @media (max-width: 600px) {
