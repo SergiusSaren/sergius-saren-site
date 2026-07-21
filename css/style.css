@@ -78,8 +78,8 @@ body {
     margin-bottom: 20px;
     line-height: 1.3;          /* фиксируем высоту строки */
     min-height: 2.6em;         /* на случай двух строк */
-    /* height: 2.6em;          /* жёсткая высота, чтобы не менялась */
-    /* overflow: hidden;       /* обрезаем всё, что вылезает */
+    height: 2.6em;          /* жёсткая высота, чтобы не менялась */
+    overflow: hidden;       /* обрезаем всё, что вылезает */
 }
 .hero p {
     font-size: 1.2rem;
