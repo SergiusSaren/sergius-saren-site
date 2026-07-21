@@ -65,7 +65,7 @@
 
         <!-- ГЕРОЙ -->
         <section class="hero">
-            <h1>Промышленная точность за бюджет студенческого проекта</h1>
+            <h1>Промышленная точность <br><span id="typing-text"></span></h1>
             <p>Разрабатываем открытую робототехническую платформу для обучения, прототипирования и реального производства.</p>
             <div class="countdown" id="countdown">
                 <div class="time-block"><div class="time-number" id="days">00</div><div class="time-label">дней</div></div>
@@ -201,8 +201,7 @@
         animateBackground();
 
         // ===== ТАЙМЕР ОБРАТНОГО ОТСЧЁТА (30 дней от сегодня) =====
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30);
+        const launchDate = new Date(2026, 9, 1, 12, 0, 0); // 1 октября 2026, 12:00
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = launchDate.getTime() - now;
@@ -220,7 +219,38 @@
         }
         updateCountdown();
         setInterval(updateCountdown, 1000);
+            // ===== ЭФЕКТ ПЕЧАТНОЙ МАШИНКИ =====
+    const phrases = [
+        'за бюджет студенческого проекта.',
+        'доступная каждому университету.',
+        'открытая архитектура для мейкеров.'
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById('typing-text');
 
+    function typeEffect() {
+        const current = phrases[phraseIndex];
+        if (!isDeleting) {
+            typingElement.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === current.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1500);
+                return;
+            }
+        } else {
+            typingElement.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+        }
+        setTimeout(typeEffect, isDeleting ? 40 : 80);
+    }
+    typeEffect();
         // ===== ФОРМА =====
         document.getElementById('subscription-form').addEventListener('submit', function(e) {
             e.preventDefault();
