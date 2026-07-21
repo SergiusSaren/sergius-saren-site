@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Поморсофт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <a href="index.html" class="logo">Поморсофт</a>
+            <nav>
+                <a href="index.html">Главная</a>
+                <a href="about.html">О проекте</a>
+                <a href="team.html">Команда</a>
+                <a href="contacts.html" class="active">Контакты</a>
+                <a href="privacy.html">Политика</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Свяжитесь с нами</h1>
+            <p>Готовы обсудить партнёрство, пилотный проект или просто ответить на вопросы.</p>
+        </section>
+
+        <div class="grid-2 section">
+            <div class="form-block" style="margin:0;">
+                <form id="contact-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Сообщение" rows="4"></textarea>
+                    <label class="consent-label">
+                        <input type="checkbox" required>
+                        <span>Согласен на <a href="privacy.html">обработку персональных данных</a></span>
+                    </label>
+                    <button type="submit" class="btn" style="width:100%;">Отправить</button>
+                </form>
+            </div>
+            <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:info@pomorsoft.ru" style="color:#00d4ff;">info@pomorsoft.ru</a></p>
+                <h3>📍 Адрес</h3>
+                <p>г. Архангельск, набережная Северной Двины, 17 (коворкинг «Точка кипения»)</p>
+                <h3>🌐 Соцсети</h3>
+                <p>
+                    <a href="#" style="color:#00d4ff;">Telegram</a> |
+                    <a href="#" style="color:#00d4ff;">VK</a> |
+                    <a href="#" style="color:#00d4ff;">YouTube</a>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Поморсофт | <a href="privacy.html">Политика конфиденциальности</a>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваше сообщение отправлено.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
