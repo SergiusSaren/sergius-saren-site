@@ -226,11 +226,18 @@
         <div class="form-container" id="form-section">
             <h2>Ранний доступ</h2>
             <form id="subscription-form">
-                <div class="input-group">
-                    <input type="text" placeholder="Ваше имя" id="name" required>
-                    <input type="email" placeholder="Email или Telegram" id="email" required>
-                    <button type="submit">Стать партнёром</button>
-                </div>
+             <div class="input-group">
+    <input type="text" placeholder="Ваше имя" id="name" required>
+    <input type="email" placeholder="Email или Telegram" id="email" required>
+    
+    <!-- Вот это добавляем -->
+    <label class="consent-label">
+        <input type="checkbox" id="consent" required>
+        <span>Я согласен на <a href="/privacy.html" target="_blank">обработку персональных данных</a></span>
+    </label>
+    
+    <button type="submit">Стать партнёром</button>
+</div>
                 <div class="success-message" id="success-msg">✅ Спасибо! Мы свяжемся сразу после запуска.</div>
             </form>
         </div>
