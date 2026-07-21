@@ -76,6 +76,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
+    min-height: 2.6em;
 }
 .hero p {
     font-size: 1.2rem;
@@ -193,6 +194,17 @@ footer {
 footer a {
     color: #00d4ff;
     text-decoration: none;
+}
+
+/* Фиксируем высоту печатной строки, чтобы блоки не скакали */
+#typing-text {
+    display: inline-block;
+    min-height: 1.3em;      /* сохраняет высоту строки даже без текста */
+    vertical-align: top;
+}
+/* Уже существующий стиль .hero h1 — просто добавляем min-height */
+.hero h1 {
+    min-height: 2.6em;      /* примерно на две строки, чтобы не сжимался */
 }
 
 /* Адаптив */
