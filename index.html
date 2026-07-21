@@ -3,111 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поморсофт — интеллектуальная робототехника | Скоро открытие</title>
-    <meta name="description" content="Стартап Поморсофт: промышленные коботы, цифровые двойники и образовательные платформы. Сайт в разработке — оставьте заявку на ранний доступ.">
-    <!-- Open Graph для соцсетей -->
-    <meta property="og:title" content="Поморсофт — умные роботы уже в пути">
-    <meta property="og:description" content="Промышленная точность за бюджет студенческого проекта. Подпишитесь на запуск.">
-    <meta property="og:image" content="https://pomorsoft.github.io/preview.png">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤖</text></svg>">
+    <title>Поморсофт — умные коботы и цифровые двойники</title>
+    <meta name="description" content="Стартап Поморсофт: промышленная робототехника для образования и бизнеса. Открытая платформа, точность 0.1 мм.">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0a0c14;
-            color: #e0e0ff;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        /* Анимированный фон */
+        /* Уникальные стили для главной */
         #bg-canvas {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
         }
-        .overlay {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            text-align: center;
-            backdrop-filter: blur(2px);
-        }
-        /* Логотип */
-        .logo {
-            font-size: clamp(2rem, 8vw, 4rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #00d4ff, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 15px rgba(0,212,255,0.4)); }
-            to { filter: drop-shadow(0 0 30px rgba(168,85,247,0.7)); }
-        }
-        .status-badge {
-            background: rgba(0,212,255,0.1);
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
-        /* Типографский слоган */
-        .hero-title {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 700;
-            max-width: 800px;
-            margin-bottom: 40px;
-            line-height: 1.3;
-        }
-        .hero-title .gradient-text {
-            background: linear-gradient(135deg, #c084fc, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        #typing-text {
-            border-right: 2px solid #00d4ff;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-        /* Таймер */
         .countdown {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin: 40px 0;
+            margin: 30px 0;
+            flex-wrap: wrap;
         }
         .time-block {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(0,212,255,0.3);
             backdrop-filter: blur(8px);
             border-radius: 20px;
-            padding: 20px 25px;
-            min-width: 90px;
-            box-shadow: 0 0 25px rgba(0,212,255,0.1);
+            padding: 15px 20px;
+            min-width: 80px;
+            text-align: center;
         }
         .time-number {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(to bottom, #fff, #a5b4fc);
             -webkit-background-clip: text;
@@ -119,155 +44,82 @@
             letter-spacing: 2px;
             color: #8892b0;
         }
-        /* Кнопка */
-        .cta-button {
-            display: inline-block;
-            margin: 30px 0;
-            padding: 16px 48px;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #00d4ff, #7b61ff);
-            color: #0a0c14;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(0,212,255,0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 50px rgba(123,97,255,0.7);
-        }
-        /* Форма */
-        .form-container {
-            background: rgba(15, 17, 30, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0,212,255,0.3);
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            margin-top: 20px;
-        }
-        .form-container h2 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: #00d4ff;
-        }
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        input {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #2a3050;
-            border-radius: 50px;
-            padding: 15px 25px;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.2s;
-        }
-        input:focus {
-            border-color: #00d4ff;
-            box-shadow: 0 0 15px rgba(0,212,255,0.2);
-        }
-        button {
-            padding: 15px;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #00d4ff, #7b61ff);
-            color: #0a0c14;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        button:hover {
-            box-shadow: 0 0 30px #7b61ff;
-        }
-        .success-message {
-            display: none;
-            color: #34d399;
-            margin-top: 15px;
-        }
-        footer {
-            margin-top: 40px;
-            color: #4a5578;
-            font-size: 0.85rem;
-        }
-        /* Сетка на canvas рисуется в JS */
-        .consent-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: #aab;
-    cursor: pointer;
-    text-align: left;
-    margin: 10px 0;
-}
-.consent-label input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #00d4ff;
-    margin: 0;
-}
-.consent-label a {
-    color: #00d4ff;
-    text-decoration: underline;
-}
     </style>
 </head>
 <body>
+    <!-- Анимированный фон (частицы) -->
     <canvas id="bg-canvas"></canvas>
-    <div class="overlay">
-        <div class="logo">ПОМОРСОФТ</div>
-        <div class="status-badge">СКОРО ЗАПУСК</div>
-        <h1 class="hero-title">
-            <span class="gradient-text">Промышленная точность</span><br>
-            <span id="typing-text"></span>
-        </h1>
-        <!-- Таймер -->
-        <div class="countdown" id="countdown">
-            <div class="time-block"><div class="time-number" id="days">00</div><div class="time-label">дней</div></div>
-            <div class="time-block"><div class="time-number" id="hours">00</div><div class="time-label">часов</div></div>
-            <div class="time-block"><div class="time-number" id="minutes">00</div><div class="time-label">минут</div></div>
-            <div class="time-block"><div class="time-number" id="seconds">00</div><div class="time-label">секунд</div></div>
-        </div>
-        <a href="#form-section" class="cta-button">⚡ Хочу на запуск</a>
 
-        <!-- Форма подписки -->
-        <div class="form-container" id="form-section">
-            <h2>Ранний доступ</h2>
+    <div class="container">
+        <!-- ШАПКА -->
+        <header class="main-header">
+            <a href="index.html" class="logo">Поморсофт</a>
+            <nav>
+                <a href="index.html" class="active">Главная</a>
+                <a href="about.html">О проекте</a>
+                <a href="team.html">Команда</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="privacy.html">Политика</a>
+            </nav>
+        </header>
+
+        <!-- ГЕРОЙ -->
+        <section class="hero">
+            <h1>Промышленная точность за бюджет студенческого проекта</h1>
+            <p>Разрабатываем открытую робототехническую платформу для обучения, прототипирования и реального производства.</p>
+            <div class="countdown" id="countdown">
+                <div class="time-block"><div class="time-number" id="days">00</div><div class="time-label">дней</div></div>
+                <div class="time-block"><div class="time-number" id="hours">00</div><div class="time-label">часов</div></div>
+                <div class="time-block"><div class="time-number" id="minutes">00</div><div class="time-label">минут</div></div>
+                <div class="time-block"><div class="time-number" id="seconds">00</div><div class="time-label">секунд</div></div>
+            </div>
+            <a href="#form" class="btn">⚡ Хочу на запуск</a>
+        </section>
+
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="section">
+            <h2 class="section-title">Почему мы?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>⚡ Точность 0.1 мм</h3>
+                    <p>Повторяемость позиционирования достаточна для пайки, 3D-печати и сборки электроники.</p>
+                </div>
+                <div class="card">
+                    <h3>🖥️ Простота управления</h3>
+                    <p>Веб-интерфейс и предустановленные сценарии — запуск за 5 минут без программирования ПЛК.</p>
+                </div>
+                <div class="card">
+                    <h3>🔓 Полностью открытый проект</h3>
+                    <p>3D-модели, схемы, исходный код управляющего ПО доступны на GitHub — модернизируйте под свои задачи.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФОРМА ПОДПИСКИ -->
+        <section id="form" class="form-block">
+            <h2 class="section-title">Ранний доступ</h2>
             <form id="subscription-form">
-             <div class="input-group">
-    <input type="text" placeholder="Ваше имя" id="name" required>
-    <input type="email" placeholder="Email или Telegram" id="email" required>
-    
-    <!-- Вот это добавляем -->
-    <label class="consent-label">
-        <input type="checkbox" id="consent" required>
-        <span>Я согласен на <a href="/privacy.html" target="_blank">обработку персональных данных</a></span>
-    </label>
-    
-    <button type="submit">Стать партнёром</button>
-</div>
-                <div class="success-message" id="success-msg">✅ Спасибо! Мы свяжемся сразу после запуска.</div>
+                <input type="text" placeholder="Ваше имя" id="name" required>
+                <input type="email" placeholder="Email или Telegram" id="email" required>
+                <label class="consent-label">
+                    <input type="checkbox" id="consent" required>
+                    <span>Я согласен на <a href="privacy.html" target="_blank">обработку персональных данных</a></span>
+                </label>
+                <button type="submit" class="btn" style="width:100%;">Стать партнёром</button>
             </form>
-        </div>
+            <div id="success-msg" style="display:none; color:#34d399; text-align:center; margin-top:15px;">
+                ✅ Спасибо! Мы свяжемся с вами после запуска.
+            </div>
+        </section>
+
+        <!-- ФУТЕР -->
         <footer>
-            © 2026 Поморсофт — Все права защищены
+            © 2026 Поморсофт | <a href="privacy.html">Политика конфиденциальности</a>
         </footer>
     </div>
 
     <script>
-        // ===== ФОН: СЕТКА И ЧАСТИЦЫ =====
+        // ===== ФОН С ЧАСТИЦАМИ И СЕТКОЙ =====
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -345,43 +197,12 @@
             requestAnimationFrame(animateBackground);
         }
 
-        // ===== ЭФФЕКТ ПЕЧАТНОЙ МАШИНКИ =====
-        const phrases = [
-            'с компьютерным зрением.',
-            'и голосовым управлением.',
-            'вместо дорогих промышленных роботов.'
-        ];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
+        resizeCanvas();
+        animateBackground();
 
-        function typeEffect() {
-            const current = phrases[phraseIndex];
-            if (!isDeleting) {
-                typingElement.textContent = current.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex === current.length) {
-                    isDeleting = true;
-                    setTimeout(typeEffect, 1500);
-                    return;
-                }
-            } else {
-                typingElement.textContent = current.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                }
-            }
-            setTimeout(typeEffect, isDeleting ? 40 : 80);
-        }
-
-        // ===== ТАЙМЕР ОБРАТНОГО ОТСЧЁТА =====
-        // Установи свою дату запуска (год, месяц(0-11), день, час, минута)
+        // ===== ТАЙМЕР ОБРАТНОГО ОТСЧЁТА (30 дней от сегодня) =====
         const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 157); // +157 дней от сегодня
-
+        launchDate.setDate(launchDate.getDate() + 30);
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = launchDate.getTime() - now;
@@ -392,37 +213,23 @@
                 document.getElementById('seconds').textContent = '00';
                 return;
             }
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (86400000)) / (3600000));
-            const minutes = Math.floor((distance % 3600000) / 60000);
-            const seconds = Math.floor((distance % 60000) / 1000);
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            document.getElementById('days').textContent = Math.floor(distance / (86400000)).toString().padStart(2,'0');
+            document.getElementById('hours').textContent = Math.floor((distance % 86400000) / 3600000).toString().padStart(2,'0');
+            document.getElementById('minutes').textContent = Math.floor((distance % 3600000) / 60000).toString().padStart(2,'0');
+            document.getElementById('seconds').textContent = Math.floor((distance % 60000) / 1000).toString().padStart(2,'0');
         }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
         // ===== ФОРМА =====
         document.getElementById('subscription-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Здесь можно отправить данные через fetch или сохранить в localStorage
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            if (name && email) {
-                document.getElementById('success-msg').style.display = 'block';
-                this.reset();
-                // Пример отправки в Google Form (раскомментируй и настрой action)
-                // fetch('https://docs.google.com/forms/...', { method: 'POST', body: new FormData(this) });
-            }
+            document.getElementById('success-msg').style.display = 'block';
+            this.reset();
         });
-
-        // ===== ЗАПУСК =====
-        resizeCanvas();
-        animateBackground();
-        typeEffect();
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
     </script>
+</body>
+</html>
  
     <!-- После открытия сайта удалить скрипт ниже!!! -->
     <script>
