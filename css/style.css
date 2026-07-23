@@ -85,6 +85,7 @@ body {
     mix-blend-mode: multiply;
 }
 
+/* Прелоадер */
 #preloader {
     position: fixed;
     top: 0;
@@ -111,6 +112,7 @@ body {
     100% { transform: scale(0.9); opacity: 0.8; }
 }
 
+/* Кастомный курсор */
 .cursor {
     display: none;
     position: fixed;
@@ -133,6 +135,7 @@ body {
     background: rgba(37,99,235,0.2);
 }
 
+/* Шапка */
 .header {
     position: fixed;
     top: 0;
@@ -172,6 +175,8 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* Навигация */
 .nav__burger {
     display: none;
     flex-direction: column;
@@ -215,6 +220,7 @@ body {
 }
 .nav__link:hover::after,
 .nav__link:focus::after { width: 100%; }
+
 .theme-toggle {
     background: none;
     border: none;
@@ -227,6 +233,7 @@ body {
 }
 .theme-toggle:hover { background: var(--bg-secondary); }
 
+/* Hero */
 .hero {
     position: relative;
     overflow: hidden;
@@ -330,6 +337,7 @@ body {
     60% { transform: translateY(-5px); }
 }
 
+/* Секции */
 .section {
     padding: 5rem 0;
 }
@@ -344,6 +352,8 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* About */
 .about__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -363,6 +373,8 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+/* Product */
 .product__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -395,6 +407,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Team */
 .team__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -423,6 +436,7 @@ body {
 .team-member__role { color: var(--accent); font-weight: 600; margin-bottom: 0.3rem; }
 .team-member__uni { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.8rem; }
 
+/* Footer */
 .footer {
     background: var(--footer-bg);
     color: var(--footer-text);
@@ -440,7 +454,7 @@ body {
 .footer__socials a { color: var(--footer-text); transition: color 0.3s; }
 .footer__socials a:hover { color: white; }
 
-/* Модальные окна на :target */
+/* ========== МОДАЛЬНЫЕ ОКНА (только CSS :target) ========== */
 .modal {
     position: fixed;
     top: 0;
@@ -454,10 +468,12 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
+    pointer-events: none; /* когда окно скрыто, клики проходят сквозь */
 }
 .modal:target {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto; /* клики внутри окна работают */
 }
 .modal__overlay {
     position: absolute;
@@ -525,6 +541,7 @@ body {
     padding: 0;
 }
 
+/* Анимация появления */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -535,6 +552,7 @@ body {
     transform: translateY(0);
 }
 
+/* Бургер-меню (mobile) */
 @media (max-width: 768px) {
     .nav__burger { display: flex; }
     .nav__list {
