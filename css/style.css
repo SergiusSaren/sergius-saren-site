@@ -718,6 +718,20 @@ a:hover {
   color: var(--color-text);
 }
 
+/* Дополнительные стили для модалки контактов */
+.contact-modal__info {
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+.contact-modal__info a {
+  color: var(--color-accent-start);
+}
+.contact-modal__info hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+}
+
 /* ===== Адаптивность ===== */
 @media (max-width: 1024px) {
   .nav {
