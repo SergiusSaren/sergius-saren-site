@@ -1,46 +1,41 @@
-// js/main.js (полный, исправленный)
+// js/main.js (полный, без ошибок)
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    // === Прелоадер ===
-    (function() {
-        const preloader = document.getElementById('preloader');
-        if (!preloader) return;
+    // === Прелоадер (обязательно) ===
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
         let hidden = false;
-        function hide() {
+        function hidePreloader() {
             if (hidden) return;
             hidden = true;
             preloader.classList.add('hidden');
             setTimeout(() => { if (preloader.parentNode) preloader.remove(); }, 500);
         }
-        window.addEventListener('load', hide);
-        setTimeout(hide, 5000);
-        if (document.readyState === 'complete') hide();
-    })();
+        window.addEventListener('load', hidePreloader);
+        setTimeout(hidePreloader, 5000);
+        if (document.readyState === 'complete') hidePreloader();
+    }
 
-    // === Кастомный курсор (десктоп) ===
-    (function() {
-        const cursor = document.querySelector('.cursor');
-        if (!cursor || !window.matchMedia('(pointer: fine)').matches) {
-            if (cursor) cursor.style.display = 'none';
-            return;
-        }
+    // === Кастомный курсор (не мешает) ===
+    const cursor = document.querySelector('.cursor');
+    if (cursor && window.matchMedia('(pointer: fine)').matches) {
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-        const hoverEls = document.querySelectorAll('a, button, .btn, .nav__link, .modal__close');
-        hoverEls.forEach(el => {
+        document.querySelectorAll('a, button, .btn, .nav__link, .modal__close').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
-    })();
+    } else if (cursor) {
+        cursor.style.display = 'none';
+    }
 
     // === Бургер-меню ===
-    (function() {
-        const burger = document.getElementById('burgerBtn');
-        const navList = document.getElementById('navList');
-        if (!burger || !navList) return;
+    const burger = document.getElementById('burgerBtn');
+    const navList = document.getElementById('navList');
+    if (burger && navList) {
         burger.addEventListener('click', () => {
             burger.classList.toggle('active');
             navList.classList.toggle('active');
@@ -53,36 +48,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 burger.setAttribute('aria-expanded', 'false');
             });
         });
-    })();
+    }
 
     // === Плавный скролл ===
-    (function() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
-    })();
+    });
 
     // === Параллакс ===
-    (function() {
-        const parallax = document.querySelector('.hero__parallax');
-        if (!parallax) return;
+    const parallax = document.querySelector('.hero__parallax');
+    if (parallax) {
         window.addEventListener('scroll', () => {
             parallax.style.transform = `translateY(${window.pageYOffset * 0.4}px)`;
         });
-    })();
+    }
 
     // === Анимация появления ===
-    (function() {
-        const revealEls = document.querySelectorAll('.reveal');
-        if (!revealEls.length) return;
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length) {
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -96,116 +87,97 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             revealEls.forEach(el => el.classList.add('visible'));
         }
-    })();
+    }
 
     // === Тема ===
-    (function() {
-        const toggle = document.getElementById('themeToggle');
-        if (!toggle) return;
-        const icon = toggle.querySelector('.theme-toggle__icon');
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('.theme-toggle__icon');
         const saved = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', saved);
         if (icon) icon.textContent = saved === 'dark' ? '☀️' : '🌙';
-        toggle.addEventListener('click', () => {
+        themeToggle.addEventListener('click', () => {
             const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             if (icon) icon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         });
-    })();
+    }
 
-    // === Модальные окна (исправлено) ===
-    (function() {
-        const modals = {
-            contact: document.getElementById('contactModal'),
-            privacy: document.getElementById('privacyModal'),
-            consent: document.getElementById('consentModal')
-        };
+    // === Модальные окна (исправлено!) ===
+    const modals = {
+        contact: document.getElementById('contactModal'),
+        privacy: document.getElementById('privacyModal'),
+        consent: document.getElementById('consentModal')
+    };
 
-        // Проверка наличия
-        for (const [key, modal] of Object.entries(modals)) {
-            if (!modal) console.error('Модалка ' + key + ' не найдена!');
-        }
+    function openModal(id) {
+        const modal = modals[id];
+        if (!modal) return;
+        modal.hidden = false;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const overlay = modal.querySelector('.modal__overlay');
+        if (overlay) setTimeout(() => overlay.focus(), 100);
+    }
 
-        function openModal(id) {
-            const modal = modals[id];
-            if (!modal) return;
-            modal.hidden = false;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            const overlay = modal.querySelector('.modal__overlay');
-            if (overlay) setTimeout(() => overlay.focus(), 100);
-        }
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('active');
+        modal.hidden = true;
+        document.body.style.overflow = '';
+    }
 
-        function closeModal(modal) {
-            if (!modal) return;
-            modal.classList.remove('active');
-            modal.hidden = true;
-            document.body.style.overflow = '';
-        }
-
-        // Закрытие по крестику и оверлею
-        document.querySelectorAll('.modal__close, .modal__overlay').forEach(el => {
-            el.addEventListener('click', () => {
-                const modal = el.closest('.modal');
-                closeModal(modal);
-            });
+    document.querySelectorAll('.modal__close, .modal__overlay').forEach(el => {
+        el.addEventListener('click', () => {
+            const modal = el.closest('.modal');
+            closeModal(modal);
         });
+    });
 
-        // Закрытие по Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                for (const key in modals) {
-                    if (modals[key] && modals[key].classList.contains('active')) {
-                        closeModal(modals[key]);
-                        break;
-                    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            for (const key in modals) {
+                if (modals[key] && modals[key].classList.contains('active')) {
+                    closeModal(modals[key]);
+                    break;
                 }
             }
-        });
+        }
+    });
 
-        // Кнопки "Контакты" и "Поддержать проект"
-        const contactLink = document.getElementById('contactLink');
-        const heroSupportBtn = document.getElementById('heroSupportBtn');
-        if (contactLink) contactLink.addEventListener('click', (e) => { e.preventDefault(); openModal('contact'); });
-        if (heroSupportBtn) heroSupportBtn.addEventListener('click', (e) => { e.preventDefault(); openModal('contact'); });
+    const contactLink = document.getElementById('contactLink');
+    const heroSupportBtn = document.getElementById('heroSupportBtn');
+    if (contactLink) contactLink.addEventListener('click', (e) => { e.preventDefault(); openModal('contact'); });
+    if (heroSupportBtn) heroSupportBtn.addEventListener('click', (e) => { e.preventDefault(); openModal('contact'); });
 
-        // Все data-modal кнопки (Политика, Согласие)
-        document.querySelectorAll('[data-modal]').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const modalId = this.getAttribute('data-modal');
-                console.log('Клик по data-modal, открываем:', modalId);
-                openModal(modalId);
-            });
-        });
-    })();
-
-    // === Форма обратной связи ===
-    (function() {
-        const form = document.getElementById('contactForm');
-        if (!form) return;
-        form.addEventListener('submit', async (e) => {
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (!form.checkValidity()) {
-                form.reportValidity();
+            const modalId = this.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+
+    // === Форма ===
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!contactForm.checkValidity()) {
+                contactForm.reportValidity();
                 return;
             }
-            const formData = new FormData(form);
+            const formData = new FormData(contactForm);
             try {
-                const response = await fetch(form.action, {
+                const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
                 if (response.ok) {
-                    form.reset();
-                    const contactModal = document.getElementById('contactModal');
-                    if (contactModal) {
-                        contactModal.classList.remove('active');
-                        contactModal.hidden = true;
-                        document.body.style.overflow = '';
-                    }
+                    contactForm.reset();
+                    closeModal(modals.contact);
                     alert('Сообщение отправлено! Мы свяжемся с вами.');
                 } else {
                     throw new Error('Ошибка сервера');
@@ -214,16 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Произошла ошибка при отправке. Попробуйте позже.');
             }
         });
-    })();
+    }
 
-    // === Защита от копирования ===
-    (function() {
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if ((e.ctrlKey && ['u','s','i','j'].includes(e.key.toLowerCase())) || e.key === 'F12') {
-                e.preventDefault();
-            }
-        });
-    })();
+    // === Защита ===
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+        if ((e.ctrlKey && ['u','s','i','j'].includes(e.key.toLowerCase())) || e.key === 'F12') {
+            e.preventDefault();
+        }
+    });
 
 });
