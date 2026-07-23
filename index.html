@@ -68,7 +68,7 @@
                     <li role="none"><a href="#about" class="nav__link" role="menuitem">О проекте</a></li>
                     <li role="none"><a href="#product" class="nav__link" role="menuitem">Продукт</a></li>
                     <li role="none"><a href="#team" class="nav__link" role="menuitem">Команда</a></li>
-                    <li role="none"><a href="#" class="nav__link" id="contactLink" role="menuitem">Контакты</a></li>
+                    <li role="none"><a href="#contactModal" class="nav__link" role="menuitem">Контакты</a></li>
                 </ul>
             </nav>
             <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
@@ -85,7 +85,7 @@
                 <h1 class="hero__title">Поморсофт — доступная роботизация для каждого</h1>
                 <p class="hero__subtitle">Мы создаём кобота и мобильное приложение, чтобы промышленная автоматизация стала доступной малому бизнесу</p>
                 <div class="hero__actions">
-                    <a href="#" class="btn btn--primary" id="heroSupportBtn">Поддержать проект</a>
+                    <a href="#contactModal" class="btn btn--primary">Поддержать проект</a>
                     <a href="#about" class="btn btn--secondary">Узнать больше</a>
                 </div>
                 <a href="#about" class="hero__scroll-down" aria-label="Прокрутить вниз">
@@ -187,9 +187,9 @@
         </div>
     </footer>
 
-    <!-- Модальное окно контактов -->
-    <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" hidden>
-        <div class="modal__overlay" tabindex="-1"></div>
+    <!-- Модальное окно КОНТАКТОВ -->
+    <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <a href="#" class="modal__overlay" aria-label="Закрыть окно"></a>
         <div class="modal__content">
             <a href="#" class="modal__close" aria-label="Закрыть окно">&times;</a>
             <h2 class="modal__title" id="contactModalTitle">Свяжитесь с нами</h2>
@@ -221,9 +221,9 @@
         </div>
     </div>
 
-    <!-- Модальное окно Политики конфиденциальности -->
-    <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" hidden>
-        <a href="#" class="modal__overlay"></a>
+    <!-- Модальное окно ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ -->
+    <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <a href="#" class="modal__overlay" aria-label="Закрыть окно"></a>
         <div class="modal__content">
             <a href="#" class="modal__close" aria-label="Закрыть окно">&times;</a>
             <h2 class="modal__title" id="privacyTitle">Политика конфиденциальности</h2>
@@ -231,9 +231,9 @@
         </div>
     </div>
 
-    <!-- Модальное окно Согласия -->
-    <div class="modal" id="consentModal" role="dialog" aria-modal="true" aria-labelledby="consentTitle" hidden>
-        <a href="#" class="modal__overlay"></a>
+    <!-- Модальное окно СОГЛАСИЯ -->
+    <div class="modal" id="consentModal" role="dialog" aria-modal="true" aria-labelledby="consentTitle">
+        <a href="#" class="modal__overlay" aria-label="Закрыть окно"></a>
         <div class="modal__content">
             <a href="#" class="modal__close" aria-label="Закрыть окно">&times;</a>
             <h2 class="modal__title" id="consentTitle">Согласие на обработку персональных данных</h2>
