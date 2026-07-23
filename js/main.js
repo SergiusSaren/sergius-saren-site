@@ -170,6 +170,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+       // Открытие модалок через data-modal (на случай если старое не работает)
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+        // Снимаем старые обработчики, чтобы не дублировать (не обязательно)
+        btn.removeEventListener('click', () => {});
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modalId = this.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.hidden = false;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
     });
 
     var contactLink = document.getElementById('contactLink');
