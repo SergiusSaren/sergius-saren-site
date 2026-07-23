@@ -76,7 +76,7 @@
           <li><a href="#about" class="nav__link">О проекте</a></li>
           <li><a href="#product" class="nav__link">Продукт</a></li>
           <li><a href="#team" class="nav__link">Команда</a></li>
-          <li><a href="#contact" class="nav__link">Контакты</a></li>
+          <li><a href="#contactModalTrigger" class="nav__link" id="contactTrigger">Контакты</a></li>
         </ul>
       </nav>
 
@@ -102,7 +102,7 @@
         <h1 class="hero__title">Поморсофт — <span class="gradient-text">доступная роботизация</span> для каждого</h1>
         <p class="hero__subtitle">Студенческий стартап, создающий коллаборативного робота и мобильное приложение для управления им. Присоединяйтесь к инновациям!</p>
         <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">Поддержать проект</a>
+          <a href="#contactModalTrigger" class="btn btn--primary" id="heroContactBtn">Поддержать проект</a>
           <a href="#about" class="btn btn--outline">Узнать больше</a>
         </div>
       </div>
@@ -187,39 +187,7 @@
       </div>
     </section>
 
-    <!-- Контакты + форма -->
-    <section id="contact" class="contact section" aria-label="Контакты">
-      <div class="container">
-        <h2 class="section__title">Свяжитесь с нами</h2>
-        <div class="contact__wrapper">
-          <div class="contact__info reveal">
-            <p><strong>Email:</strong> <a href="mailto:hello@pomorsoft.ru">hello@pomorsoft.ru</a></p>
-            <p><strong>Telegram:</strong> <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer">@pomorsoft</a></p>
-            <p><strong>ВКонтакте:</strong> <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer">vk.com/pomorsoft</a></p>
-            <p>Мы открыты для предложений о сотрудничестве и грантовой поддержке.</p>
-          </div>
-          <form id="contactForm" class="contact__form reveal" action="https://formspree.io/f/ваш_id" method="POST">
-            <div class="form-group">
-              <label for="name">Имя *</label>
-              <input type="text" id="name" name="name" required placeholder="Ваше имя" autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="example@mail.ru" autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="message">Сообщение *</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Ваш вопрос или предложение"></textarea>
-            </div>
-            <div class="form-group form-consent">
-              <input type="checkbox" id="consent" name="consent" required>
-              <label for="consent">Я даю <a href="#" id="consentLink">согласие на обработку персональных данных</a> и принимаю <a href="#" id="policyLink">политику конфиденциальности</a>.</label>
-            </div>
-            <button type="submit" class="btn btn--primary">Отправить сообщение</button>
-          </form>
-        </div>
-      </div>
-    </section>
+    <!-- Бывшая секция контактов удалена, вместо неё только модальное окно -->
   </main>
 
   <!-- Футер -->
@@ -231,28 +199,29 @@
       </div>
       <div class="footer__socials">
         <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">...</svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.725 0 0 3.725 0 8.316v7.368C0 20.275 3.725 24 8.316 24h7.368C20.275 24 24 20.275 24 15.684V8.316C24 3.725 20.275 0 15.684 0zm3.692 16.372h-2.346c-.405 0-.524-.315-.524-.315s-.373-.993-.872-1.894c-.86-.864-1.206-.904-1.354-.904-.243 0-.308.09-.308.555v1.77c0 .394-.13.63-1.172.63-1.72 0-3.618-.995-4.956-2.872-2.083-2.886-2.615-5.053-2.615-5.5 0-.216.09-.408.49-.408h2.345c.37 0 .508.17.58.555.645 1.88 1.72 3.526 2.167 3.526.167 0 .243-.08.243-.56V7.155c-.05-.5-.29-.725-.57-.725-.28 0 .17-.49.73-.494h2.625c.487 0 .583.254.583.514v2.773c0 .485.196.61.316.61.167 0 .308-.098.615-.611.49-.858.84-2.253.84-2.253s.09-.203.367-.203h2.408s.707.07.707.54c0 .27-.554 1.795-2.373 3.822-1.756 1.958-1.756 1.796-.437 2.99 1.218 1.1 1.466 1.64 1.506 1.71.45.78-.98.78-.98.78z"/></svg>
         </a>
         <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">...</svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.12l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>
         </a>
         <a href="mailto:hello@pomorsoft.ru" aria-label="Написать email">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">...</svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- Модальные окна -->
+  <!-- Модальное окно: Политика конфиденциальности -->
   <div id="policyModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="policyTitle">
     <div class="modal__overlay"></div>
     <div class="modal__content">
       <button class="modal__close" aria-label="Закрыть">×</button>
       <h2 id="policyTitle">Политика конфиденциальности</h2>
-      <p>Здесь будет текст политики конфиденциальности. Замените на реальный.</p>
+      <p>Здесь будет текст политики конфиденциальности. Вы можете заменить его на свой.</p>
     </div>
   </div>
 
+  <!-- Модальное окно: Согласие -->
   <div id="consentModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="consentTitle">
     <div class="modal__overlay"></div>
     <div class="modal__content">
@@ -261,6 +230,44 @@
       <p>Здесь будет текст согласия. Замените на реальный.</p>
     </div>
   </div>
+
+  <!-- Модальное окно: Контакты -->
+  <div id="contactModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="contactModalTitle">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <h2 id="contactModalTitle">Контакты</h2>
+      <div class="contact-modal__info">
+        <p><strong>Email:</strong> <a href="mailto:hello@pomorsoft.ru">hello@pomorsoft.ru</a></p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer">@pomorsoft</a></p>
+        <p><strong>ВКонтакте:</strong> <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer">vk.com/pomorsoft</a></p>
+        <hr style="margin: 1.5rem 0; border-color: var(--color-border);">
+        <p>Или напишите нам прямо сейчас:</p>
+      </div>
+      <form id="contactForm" class="contact__form" action="https://formspree.io/f/ваш_id" method="POST">
+        <div class="form-group">
+          <label for="name">Имя *</label>
+          <input type="text" id="name" name="name" required placeholder="Ваше имя" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.ru" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Ваш вопрос или предложение"></textarea>
+        </div>
+        <div class="form-group form-consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Я даю <a href="#" id="consentLink">согласие на обработку персональных данных</a> и принимаю <a href="#" id="policyLink">политику конфиденциальности</a>.</label>
+        </div>
+        <button type="submit" class="btn btn--primary">Отправить сообщение</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Скрытый триггер для открытия модалки контактов из навигации (якорь) -->
+  <a href="#contactModal" id="contactModalTrigger" style="display: none;">Контакты</a>
 
   <script src="js/main.js"></script>
 </body>
