@@ -1,17 +1,15 @@
-// js/main.js (финальная версия с гарантированным скрытием прелоадера)
+// js/main.js (исправленная и полная версия)
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
-    // ===== Прелоадер: скрываем в любом случае =====
+    // ===== Прелоадер =====
     var preloader = document.getElementById('preloader');
     if (preloader) {
-        // Функция скрытия вызывается один раз
         var hidden = false;
         function hidePreloader() {
             if (hidden) return;
             hidden = true;
             preloader.classList.add('hidden');
-            // Удаляем элемент после анимации
             setTimeout(function() {
                 if (preloader && preloader.parentNode) {
                     preloader.parentNode.removeChild(preloader);
@@ -19,23 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }
 
-        // 1. Прячем, когда всё загружено
         window.addEventListener('load', hidePreloader);
-
-        // 2. Прячем через 3 секунды, если load не сработал (быстрее, чем раньше)
         setTimeout(hidePreloader, 3000);
 
-        // 3. Если DOMContentLoaded сработал позже, чем complete (редко)
         if (document.readyState === 'complete') {
             hidePreloader();
         }
-
-        // Дополнительно: выводим в консоль, чтобы понять, жив ли скрипт
         console.log('Прелоадер запущен, скроется автоматически');
     }
 
-    // ===== Остальной код (без изменений) =====
-    // Кастомный курсор
+    // ===== Кастомный курсор =====
     var cursor = document.querySelector('.cursor');
     if (cursor && window.matchMedia('(pointer: fine)').matches) {
         document.addEventListener('mousemove', function(e) {
@@ -51,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cursor.style.display = 'none';
     }
 
-    // Бургер-меню
+    // ===== Бургер-меню =====
     var burger = document.getElementById('burgerBtn');
     var navList = document.getElementById('navList');
     if (burger && navList) {
@@ -70,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Плавный скролл
+    // ===== Плавный скролл =====
     var anchors = document.querySelectorAll('a[href^="#"]');
     for (var k = 0; k < anchors.length; k++) {
         anchors[k].addEventListener('click', function(e) {
@@ -84,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Параллакс
+    // ===== Параллакс =====
     var parallax = document.querySelector('.hero__parallax');
     if (parallax) {
         window.addEventListener('scroll', function() {
@@ -92,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Анимация появления
+    // ===== Анимация появления =====
     var revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length > 0) {
         if ('IntersectionObserver' in window) {
@@ -114,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Переключение темы
+    // ===== Переключение темы =====
     var themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         var icon = themeToggle.querySelector('.theme-toggle__icon');
@@ -129,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Модальные окна
+    // ===== Модальные окна =====
     var modals = {
         contact: document.getElementById('contactModal'),
         privacy: document.getElementById('privacyModal'),
@@ -153,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     }
 
+    // Закрытие по крестику и оверлею
     var closeButtons = document.querySelectorAll('.modal__close, .modal__overlay');
     for (var p = 0; p < closeButtons.length; p++) {
         closeButtons[p].addEventListener('click', function() {
@@ -161,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Закрытие по Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             for (var key in modals) {
@@ -170,28 +163,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-       // Открытие модалок через data-modal (на случай если старое не работает)
-    document.querySelectorAll('[data-modal]').forEach(btn => {
-        // Снимаем старые обработчики, чтобы не дублировать (не обязательно)
-        btn.removeEventListener('click', () => {});
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.hidden = false;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
     });
 
+    // Триггеры "Контакты" и "Поддержать проект"
     var contactLink = document.getElementById('contactLink');
     var heroSupportBtn = document.getElementById('heroSupportBtn');
     if (contactLink) contactLink.addEventListener('click', function(e) { e.preventDefault(); openModal('contact'); });
     if (heroSupportBtn) heroSupportBtn.addEventListener('click', function(e) { e.preventDefault(); openModal('contact'); });
 
+    // Все data-modal кнопки (Политика конфиденциальности и Согласие)
     var dataModalBtns = document.querySelectorAll('[data-modal]');
     for (var q = 0; q < dataModalBtns.length; q++) {
         dataModalBtns[q].addEventListener('click', function(e) {
@@ -201,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Форма обратной связи
+    // ===== Форма обратной связи =====
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -229,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Защита от копирования
+    // ===== Защита от копирования =====
     document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J')) || e.key === 'F12') {
