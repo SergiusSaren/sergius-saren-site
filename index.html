@@ -1,29 +1,23 @@
-
----
-
-## 2. index.html (обновлённый)
-
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Поморсофт — мы превращаем идеи в цифровую реальность. Разработка веб-сайтов, мобильных приложений и дизайн премиум-уровня.">
-  <title>Поморсофт — Цифровая реальность ваших идей</title>
+  <meta name="description" content="Поморсофт — студенческий стартап. Мы создаём доступного кобота и управляющее приложение для автоматизации рутинных задач. Присоединяйтесь к нашему проекту!">
+  <title>Поморсофт — Инновации для реальных задач</title>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pomorsoft.ru/">
-  <meta property="og:title" content="Поморсофт — мы превращаем идеи в цифровую реальность">
-  <meta property="og:description" content="Создаём мощные IT-решения: веб-разработка, мобильные приложения и дизайн. Современный подход, надёжность и стиль.">
+  <meta property="og:title" content="Поморсофт — студенческий стартап. Коботы и приложения.">
+  <meta property="og:description" content="Мы разрабатываем коллаборативного робота и мобильное приложение для управления им. Инновационное решение для промышленности и образования.">
   <meta property="og:image" content="https://pomorsoft.ru/assets/img/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://pomorsoft.ru/">
-  <meta name="twitter:title" content="Поморсофт — мы превращаем идеи в цифровую реальность">
-  <meta name="twitter:description" content="Создаём мощные IT-решения: веб-разработка, мобильные приложения и дизайн.">
+  <meta name="twitter:title" content="Поморсофт — студенческий стартап">
+  <meta name="twitter:description" content="Создаём кобота и приложение для автоматизации.">
   <meta name="twitter:image" content="https://pomorsoft.ru/assets/img/og-image.jpg">
 
   <!-- Google Fonts -->
@@ -42,7 +36,6 @@
   <!-- Прелоадер -->
   <div id="preloader" class="preloader" aria-hidden="true">
     <div class="preloader__logo">
-      <!-- Инлайн SVG логотипа (анимированный) -->
       <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="76" height="76" rx="16" stroke="url(#grad)" stroke-width="4" stroke-dasharray="200" stroke-dashoffset="200">
           <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" />
@@ -58,10 +51,10 @@
     </div>
   </div>
 
-  <!-- Кастомный курсор (только десктоп) -->
+  <!-- Кастомный курсор -->
   <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-  <!-- Основная навигация -->
+  <!-- Шапка -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#hero" class="logo" aria-label="Поморсофт — на главную">
@@ -80,10 +73,9 @@
 
       <nav class="nav" id="navMenu" aria-label="Основное меню">
         <ul class="nav__list">
-          <li><a href="#advantages" class="nav__link">Преимущества</a></li>
-          <li><a href="#services" class="nav__link">Услуги</a></li>
-          <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
-          <li><a href="#testimonials" class="nav__link">Отзывы</a></li>
+          <li><a href="#about" class="nav__link">О проекте</a></li>
+          <li><a href="#product" class="nav__link">Продукт</a></li>
+          <li><a href="#team" class="nav__link">Команда</a></li>
           <li><a href="#contact" class="nav__link">Контакты</a></li>
         </ul>
       </nav>
@@ -103,237 +95,129 @@
   </header>
 
   <main id="mainContent">
-    <!-- Hero-блок -->
+    <!-- Hero -->
     <section id="hero" class="hero" aria-label="Главный экран">
-      <div class="hero__bg" aria-hidden="true"><!-- абстрактный фон --></div>
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__content">
-        <h1 class="hero__title">Мы превращаем идеи<br>в <span class="gradient-text">цифровую реальность</span></h1>
-        <p class="hero__subtitle">Создаём мощные IT-решения: веб-сайты, мобильные приложения и дизайн, которые двигают бизнес вперёд.</p>
+        <h1 class="hero__title">Поморсофт — <span class="gradient-text">доступная роботизация</span> для каждого</h1>
+        <p class="hero__subtitle">Студенческий стартап, создающий коллаборативного робота и мобильное приложение для управления им. Присоединяйтесь к инновациям!</p>
         <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">Начать проект</a>
-          <a href="#services" class="btn btn--outline">Узнать больше</a>
+          <a href="#contact" class="btn btn--primary">Поддержать проект</a>
+          <a href="#about" class="btn btn--outline">Узнать больше</a>
         </div>
       </div>
-      <a href="#advantages" class="scroll-hint" aria-label="Прокрутить вниз">
+      <a href="#about" class="scroll-hint" aria-label="Прокрутить вниз">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/></svg>
       </a>
     </section>
 
-    <!-- Преимущества -->
-    <section id="advantages" class="advantages section" aria-label="Наши преимущества">
+    <!-- О проекте -->
+    <section id="about" class="about section" aria-label="О проекте">
       <div class="container">
-        <h2 class="section__title">Почему выбирают нас</h2>
-        <div class="advantages__grid">
-          <div class="advantage-card reveal">
-            <div class="advantage-card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="16 24 22 30 32 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 class="advantage-card__title">Передовые технологии</h3>
-            <p class="advantage-card__desc">Используем актуальный стек: React, Vue, Node.js, чтобы ваш продукт был быстрым и масштабируемым.</p>
+        <h2 class="section__title">Наша миссия</h2>
+        <div class="about__content">
+          <div class="about__text reveal">
+            <h3>Проблема</h3>
+            <p>Малые производства и учебные лаборатории не могут позволить себе промышленных роботов из-за высокой стоимости и сложности внедрения. Студенты и инженеры нуждаются в доступных решениях для обучения и автоматизации рутины.</p>
+            <h3>Решение</h3>
+            <p>Мы разрабатываем лёгкого коллаборативного робота-манипулятора с открытой архитектурой и интуитивное мобильное приложение для программирования задач без навыков кодинга. Наша цель — сделать робототехнику доступной и понятной.</p>
           </div>
-          <div class="advantage-card reveal">
-            <div class="advantage-card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="16 24 22 30 32 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="about__visual reveal">
+            <!-- Иллюстрация-заглушка -->
+            <div class="about__image-placeholder" aria-hidden="true">
+              <svg width="200" height="150" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="10" width="180" height="130" rx="8" stroke-dasharray="8"/><text x="100" y="80" text-anchor="middle" fill="currentColor" font-size="16" font-family="Inter">Иллюстрация</text></svg>
             </div>
-            <h3 class="advantage-card__title">Сдача точно в срок</h3>
-            <p class="advantage-card__desc">Прозрачная методология Agile, спринты и регулярные демо — вы всегда знаете, что происходит.</p>
-          </div>
-          <div class="advantage-card reveal">
-            <div class="advantage-card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="18" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M30 36c0-6.627-5.373-12-12-12s-12 5.373-12 12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M42 30c0-3.314-2.686-6-6-6s-6 2.686-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-            <h3 class="advantage-card__title">Команда экспертов</h3>
-            <p class="advantage-card__desc">Средний опыт наших разработчиков — 7 лет. Мы знаем, как решать сложные задачи.</p>
-          </div>
-          <div class="advantage-card reveal">
-            <div class="advantage-card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48"><path d="M24 4L6 14v12c0 10.5 7.6 20.3 18 22 10.4-1.7 18-11.5 18-22V14L24 4z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="16 24 22 30 32 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 class="advantage-card__title">Безопасность и надёжность</h3>
-            <p class="advantage-card__desc">Все проекты проходят аудит безопасности. Ваши данные под защитой 24/7.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Услуги -->
-    <section id="services" class="services section" aria-label="Наши услуги">
+    <!-- Продукт -->
+    <section id="product" class="product section" aria-label="Наш продукт">
       <div class="container">
-        <h2 class="section__title">Что мы делаем</h2>
-        <div class="services__grid">
-          <div class="service-card reveal">
-            <div class="service-card__icon">💻</div>
-            <h3>Веб-разработка</h3>
-            <p>Корпоративные порталы, интернет-магазины, лендинги — всё с фокусом на конверсию.</p>
+        <h2 class="section__title">Что мы создаём</h2>
+        <div class="product__grid">
+          <div class="product-card reveal">
+            <div class="product-card__icon">🤖</div>
+            <h3>Кобот «Помор-1»</h3>
+            <p>Лёгкий (до 5 кг) манипулятор с 6 степенями свободы, оснащённый системой технического зрения. Безопасен для работы рядом с человеком. Открытое ПО и возможность 3D-печати корпусных деталей.</p>
           </div>
-          <div class="service-card reveal">
-            <div class="service-card__icon">📱</div>
-            <h3>Мобильные приложения</h3>
-            <p>Нативные iOS/Android и кроссплатформенные решения на Flutter и React Native.</p>
+          <div class="product-card reveal">
+            <div class="product-card__icon">📱</div>
+            <h3>Мобильное приложение</h3>
+            <p>Интуитивный интерфейс для создания сценариев работы кобота. Библиотека готовых шаблонов, управление жестами, интеграция с камерой смартфона для калибровки.</p>
           </div>
-          <div class="service-card reveal">
-            <div class="service-card__icon">🎨</div>
-            <h3>UI/UX дизайн</h3>
-            <p>Проектируем интерфейсы, которые любят пользователи. Прототипы, тестирование, дизайн-системы.</p>
+        </div>
+        <div class="product__note reveal">
+          <p>Первый прототип будет готов к демонстрации в июне 2026 года. Мы активно ищем партнёров и инвестиции.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Команда -->
+    <section id="team" class="team section" aria-label="Наша команда">
+      <div class="container">
+        <h2 class="section__title">Кто мы</h2>
+        <div class="team__grid">
+          <div class="team-card reveal">
+            <div class="team-card__avatar">
+              <img src="assets/img/team/avatar1.jpg" srcset="assets/img/team/avatar1@2x.jpg 2x" alt="Иван Иванов" loading="lazy" width="100" height="100">
+            </div>
+            <h3>Иван Иванов</h3>
+            <p class="team-card__role">Лидер проекта, мехатроника</p>
+            <p>Студент 4 курса САФУ, направление «Робототехника». Отвечает за конструкцию и кинематику.</p>
           </div>
-          <div class="service-card reveal">
-            <div class="service-card__icon">⚙️</div>
-            <h3>DevOps & Облака</h3>
-            <p>Настроим CI/CD, миграцию в облако (AWS, Яндекс.Облако), обеспечим отказоустойчивость.</p>
+          <div class="team-card reveal">
+            <div class="team-card__avatar">
+              <img src="assets/img/team/avatar2.jpg" srcset="assets/img/team/avatar2@2x.jpg 2x" alt="Мария Петрова" loading="lazy" width="100" height="100">
+            </div>
+            <h3>Мария Петрова</h3>
+            <p class="team-card__role">Программист, CV/AI</p>
+            <p>Магистрантка ИТМО, специализируется на компьютерном зрении и ROS.</p>
           </div>
-          <div class="service-card reveal">
-            <div class="service-card__icon">🔍</div>
-            <h3>SEO & Аналитика</h3>
-            <p>Продвижение в поисковых системах, сквозная аналитика, работа с данными.</p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-card__icon">🤖</div>
-            <h3>AI & Автоматизация</h3>
-            <p>Внедряем машинное обучение, чат-ботов, автоматизируем бизнес-процессы.</p>
+          <div class="team-card reveal">
+            <div class="team-card__avatar">
+              <img src="assets/img/team/avatar3.jpg" srcset="assets/img/team/avatar3@2x.jpg 2x" alt="Алексей Смирнов" loading="lazy" width="100" height="100">
+            </div>
+            <h3>Алексей Смирнов</h3>
+            <p class="team-card__role">Мобильная разработка</p>
+            <p>Студент 3 курса МФТИ, создаёт приложение на Flutter и IoT-интеграции.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Портфолио -->
-    <section id="portfolio" class="portfolio section" aria-label="Портфолио проектов">
+    <!-- Контакты + форма -->
+    <section id="contact" class="contact section" aria-label="Контакты">
       <div class="container">
-        <h2 class="section__title">Наши работы</h2>
-        <!-- Фильтры -->
-        <div class="filter-buttons" role="radiogroup" aria-label="Фильтр проектов">
-          <button class="filter-btn active" role="radio" aria-checked="true" data-filter="all">Все</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-filter="web">Веб</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-filter="mobile">Мобильные</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-filter="design">Дизайн</button>
+        <h2 class="section__title">Свяжитесь с нами</h2>
+        <div class="contact__wrapper">
+          <div class="contact__info reveal">
+            <p><strong>Email:</strong> <a href="mailto:hello@pomorsoft.ru">hello@pomorsoft.ru</a></p>
+            <p><strong>Telegram:</strong> <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer">@pomorsoft</a></p>
+            <p><strong>ВКонтакте:</strong> <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer">vk.com/pomorsoft</a></p>
+            <p>Мы открыты для предложений о сотрудничестве и грантовой поддержке.</p>
+          </div>
+          <form id="contactForm" class="contact__form reveal" action="https://formspree.io/f/ваш_id" method="POST">
+            <div class="form-group">
+              <label for="name">Имя *</label>
+              <input type="text" id="name" name="name" required placeholder="Ваше имя" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="example@mail.ru" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="message">Сообщение *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Ваш вопрос или предложение"></textarea>
+            </div>
+            <div class="form-group form-consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">Я даю <a href="#" id="consentLink">согласие на обработку персональных данных</a> и принимаю <a href="#" id="policyLink">политику конфиденциальности</a>.</label>
+            </div>
+            <button type="submit" class="btn btn--primary">Отправить сообщение</button>
+          </form>
         </div>
-        <!-- Галерея -->
-        <div class="portfolio__grid" id="portfolioGrid">
-          <!-- Карточка 1 -->
-          <div class="portfolio-card" data-category="web" data-title="FinTech Dashboard" data-desc="Аналитическая панель для финансового стартапа. React + D3.js" data-img="assets/img/portfolio/web1@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/web1.webp 1x, assets/img/portfolio/web1@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/web1.jpg" srcset="assets/img/portfolio/web1@2x.jpg 2x" alt="FinTech Dashboard" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>FinTech Dashboard</span></div>
-          </div>
-          <!-- Карточка 2 -->
-          <div class="portfolio-card" data-category="mobile" data-title="FitApp" data-desc="Мобильное приложение для фитнес-клуба. Flutter, Firebase." data-img="assets/img/portfolio/mobile1@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/mobile1.webp 1x, assets/img/portfolio/mobile1@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/mobile1.jpg" srcset="assets/img/portfolio/mobile1@2x.jpg 2x" alt="FitApp Mobile" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>FitApp</span></div>
-          </div>
-          <!-- Карточка 3 -->
-          <div class="portfolio-card" data-category="design" data-title="Brand Identity" data-desc="Фирменный стиль для IT-конференции. Логотип, гайдлайн." data-img="assets/img/portfolio/design1@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/design1.webp 1x, assets/img/portfolio/design1@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/design1.jpg" srcset="assets/img/portfolio/design1@2x.jpg 2x" alt="Brand Identity" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>Brand Identity</span></div>
-          </div>
-          <!-- ещё карточки -->
-          <div class="portfolio-card" data-category="web" data-title="E-commerce Platform" data-desc="Интернет-магазин электроники. Laravel + Vue.js" data-img="assets/img/portfolio/web2@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/web2.webp 1x, assets/img/portfolio/web2@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/web2.jpg" srcset="assets/img/portfolio/web2@2x.jpg 2x" alt="E-commerce" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>E-commerce Platform</span></div>
-          </div>
-          <div class="portfolio-card" data-category="mobile" data-title="Travel Guide" data-desc="Гид по городам с дополненной реальностью. Unity, ARKit." data-img="assets/img/portfolio/mobile2@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/mobile2.webp 1x, assets/img/portfolio/mobile2@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/mobile2.jpg" srcset="assets/img/portfolio/mobile2@2x.jpg 2x" alt="Travel Guide" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>Travel Guide</span></div>
-          </div>
-          <div class="portfolio-card" data-category="design" data-title="Mobile Bank App" data-desc="Полный редизайн интерфейса мобильного банка." data-img="assets/img/portfolio/design2@2x.jpg">
-            <picture>
-              <source srcset="assets/img/portfolio/design2.webp 1x, assets/img/portfolio/design2@2x.webp 2x" type="image/webp">
-              <img src="assets/img/portfolio/design2.jpg" srcset="assets/img/portfolio/design2@2x.jpg 2x" alt="Bank App Design" loading="lazy" width="400" height="300">
-            </picture>
-            <div class="portfolio-card__overlay"><span>Mobile Bank App</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Лайтбокс -->
-    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр проекта">
-      <div class="lightbox__overlay"></div>
-      <div class="lightbox__content">
-        <button class="lightbox__close" aria-label="Закрыть">×</button>
-        <img src="" alt="" id="lightboxImg" class="lightbox__image">
-        <div class="lightbox__info">
-          <h3 id="lightboxTitle"></h3>
-          <p id="lightboxDesc"></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Отзывы -->
-    <section id="testimonials" class="testimonials section" aria-label="Отзывы клиентов">
-      <div class="container">
-        <h2 class="section__title">Что говорят клиенты</h2>
-        <div class="testimonials__carousel" id="testimonialCarousel" aria-live="polite">
-          <div class="testimonial active">
-            <blockquote>
-              <p>«Поморсофт создали для нас платформу, которая увеличила продажи на 40%. Профессионализм и скорость выше всяких похвал.»</p>
-              <footer>
-                <img src="assets/img/avatars/avatar1.jpg" srcset="assets/img/avatars/avatar1@2x.jpg 2x" alt="Анна Петрова" class="testimonial__avatar" loading="lazy" width="60" height="60">
-                <cite>Сергей, CEO FinStart</cite>
-              </footer>
-            </blockquote>
-          </div>
-          <div class="testimonial">
-            <blockquote>
-              <p>«Лучший опыт разработки мобильного приложения. Всё чётко, в срок, с вниманием к деталям. Рекомендую.»</p>
-              <footer>
-                <img src="assets/img/avatars/avatar2.jpg" srcset="assets/img/avatars/avatar2@2x.jpg 2x" alt="Иван Смирнов" class="testimonial__avatar" loading="lazy" width="60" height="60">
-                <cite>Сергей, основатель FitLife</cite>
-              </footer>
-            </blockquote>
-          </div>
-          <div class="testimonial">
-            <blockquote>
-              <p>«Дизайн превзошёл ожидания. Команда погрузилась в наш продукт и предложила решения, о которых мы даже не думали.»</p>
-              <footer>
-                <img src="assets/img/avatars/avatar3.jpg" srcset="assets/img/avatars/avatar3@2x.jpg 2x" alt="Елена Кузнецова" class="testimonial__avatar" loading="lazy" width="60" height="60">
-                <cite>Елена Кузнецова, маркетолог TravelGo</cite>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" id="prevTestimonial" aria-label="Предыдущий отзыв">←</button>
-          <button class="carousel-btn" id="nextTestimonial" aria-label="Следующий отзыв">→</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Форма связи -->
-    <section id="contact" class="contact section" aria-label="Связаться с нами">
-      <div class="container">
-        <h2 class="section__title">Напишите нам</h2>
-        <form id="contactForm" class="contact__form" action="https://formspree.io/f/ваш_id" method="POST">
-          <div class="form-group">
-            <label for="name">Имя *</label>
-            <input type="text" id="name" name="name" required placeholder="Ваше имя" autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="example@mail.ru" autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label for="message">Сообщение *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Опишите ваш проект или вопрос"></textarea>
-          </div>
-          <div class="form-group form-consent">
-            <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent">Я даю <a href="#" id="consentLink">согласие на обработку персональных данных</a> и принимаю <a href="#" id="policyLink">политику конфиденциальности</a>.</label>
-          </div>
-          <button type="submit" class="btn btn--primary">Отправить сообщение</button>
-        </form>
       </div>
     </section>
   </main>
@@ -342,33 +226,30 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__left">
-        <p class="footer__copyright">&copy; 2025 Поморсофт. Все права защищены.</p>
+        <p class="footer__copyright">&copy; 2026 Поморсофт. Все права защищены.</p>
         <p class="footer__domain">pomorsoft.ru</p>
       </div>
       <div class="footer__socials">
         <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.725 0 0 3.725 0 8.316v7.368C0 20.275 3.725 24 8.316 24h7.368C20.275 24 24 20.275 24 15.684V8.316C24 3.725 20.275 0 15.684 0zm3.692 16.372h-2.346c-.405 0-.524-.315-.524-.315s-.373-.993-.872-1.894c-.86-.864-1.206-.904-1.354-.904-.243 0-.308.09-.308.555v1.77c0 .394-.13.63-1.172.63-1.72 0-3.618-.995-4.956-2.872-2.083-2.886-2.615-5.053-2.615-5.5 0-.216.09-.408.49-.408h2.345c.37 0 .508.17.58.555.645 1.88 1.72 3.526 2.167 3.526.167 0 .243-.08.243-.56V7.155c-.05-.5-.29-.725-.57-.725-.28 0 .17-.49.73-.494h2.625c.487 0 .583.254.583.514v2.773c0 .485.196.61.316.61.167 0 .308-.098.615-.611.49-.858.84-2.253.84-2.253s.09-.203.367-.203h2.408s.707.07.707.54c0 .27-.554 1.795-2.373 3.822-1.756 1.958-1.756 1.796-.437 2.99 1.218 1.1 1.466 1.64 1.506 1.71.45.78-.98.78-.98.78z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">...</svg>
         </a>
         <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.12l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>
-        </a>
-        <a href="https://max.ru/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="MAX">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="white">M</text></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">...</svg>
         </a>
         <a href="mailto:hello@pomorsoft.ru" aria-label="Написать email">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2 6 12 13 22 6"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">...</svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- Модальные окна для документов -->
+  <!-- Модальные окна -->
   <div id="policyModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="policyTitle">
     <div class="modal__overlay"></div>
     <div class="modal__content">
       <button class="modal__close" aria-label="Закрыть">×</button>
       <h2 id="policyTitle">Политика конфиденциальности</h2>
-      <p>Здесь будет текст политики конфиденциальности. Вы можете заменить его на свой.</p>
+      <p>Здесь будет текст политики конфиденциальности. Замените на реальный.</p>
     </div>
   </div>
 
@@ -384,4 +265,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-      
