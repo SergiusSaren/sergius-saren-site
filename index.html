@@ -1,10 +1,16 @@
+
+---
+
+## 2. index.html (обновлённый)
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NexaForge — мы превращаем идеи в цифровую реальность. Разработка веб-сайтов, мобильных приложений и дизайн премиум-уровня.">
-  <title>NexaForge — Цифровая реальность ваших идей</title>
+  <meta name="description" content="Поморсофт — мы превращаем идеи в цифровую реальность. Разработка веб-сайтов, мобильных приложений и дизайн премиум-уровня.">
+  <title>Поморсофт — Цифровая реальность ваших идей</title>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -16,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://pomorsoft.ru/">
-  <meta name="twitter:title" content="NexaForge — мы превращаем идеи в цифровую реальность">
+  <meta name="twitter:title" content="Поморсофт — мы превращаем идеи в цифровую реальность">
   <meta name="twitter:description" content="Создаём мощные IT-решения: веб-разработка, мобильные приложения и дизайн.">
   <meta name="twitter:image" content="https://pomorsoft.ru/assets/img/og-image.jpg">
 
@@ -28,8 +34,8 @@
   <!-- Основные стили -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Favicon (плейсхолдер) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='50%25' y='55%25' font-size='20' fill='white' text-anchor='middle' dy='.1em' font-family='sans-serif'>N</text></svg>">
+  <!-- Favicon (буква П) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='50%25' y='55%25' font-size='20' fill='white' text-anchor='middle' dy='.1em' font-family='sans-serif'>П</text></svg>">
 </head>
 <body>
 
@@ -41,7 +47,7 @@
         <rect x="2" y="2" width="76" height="76" rx="16" stroke="url(#grad)" stroke-width="4" stroke-dasharray="200" stroke-dashoffset="200">
           <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" />
         </rect>
-        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="url(#grad)">N</text>
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="url(#grad)">П</text>
         <defs>
           <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#2563eb"/>
@@ -58,10 +64,10 @@
   <!-- Основная навигация -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#hero" class="logo" aria-label="NexaForge — на главную">
+      <a href="#hero" class="logo" aria-label="Поморсофт — на главную">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
-          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="white">N</text>
+          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="white">П</text>
           <defs>
             <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#2563eb"/>
@@ -69,7 +75,7 @@
             </linearGradient>
           </defs>
         </svg>
-        <span class="logo__text">NexaForge</span>
+        <span class="logo__text">Поморсофт</span>
       </a>
 
       <nav class="nav" id="navMenu" aria-label="Основное меню">
@@ -226,7 +232,7 @@
             </picture>
             <div class="portfolio-card__overlay"><span>Brand Identity</span></div>
           </div>
-          <!-- ... ещё несколько карточек, добавим 3 штуки для демонстрации -->
+          <!-- ещё карточки -->
           <div class="portfolio-card" data-category="web" data-title="E-commerce Platform" data-desc="Интернет-магазин электроники. Laravel + Vue.js" data-img="assets/img/portfolio/web2@2x.jpg">
             <picture>
               <source srcset="assets/img/portfolio/web2.webp 1x, assets/img/portfolio/web2@2x.webp 2x" type="image/webp">
@@ -252,7 +258,7 @@
       </div>
     </section>
 
-    <!-- Лайтбокс для портфолио -->
+    <!-- Лайтбокс -->
     <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр проекта">
       <div class="lightbox__overlay"></div>
       <div class="lightbox__content">
@@ -272,10 +278,10 @@
         <div class="testimonials__carousel" id="testimonialCarousel" aria-live="polite">
           <div class="testimonial active">
             <blockquote>
-              <p>«NexaForge создали для нас платформу, которая увеличила продажи на 40%. Профессионализм и скорость выше всяких похвал.»</p>
+              <p>«Поморсофт создали для нас платформу, которая увеличила продажи на 40%. Профессионализм и скорость выше всяких похвал.»</p>
               <footer>
                 <img src="assets/img/avatars/avatar1.jpg" srcset="assets/img/avatars/avatar1@2x.jpg 2x" alt="Анна Петрова" class="testimonial__avatar" loading="lazy" width="60" height="60">
-                <cite>Сергей Владимирович, CEO FinStart</cite>
+                <cite>Сергей, CEO FinStart</cite>
               </footer>
             </blockquote>
           </div>
@@ -284,7 +290,7 @@
               <p>«Лучший опыт разработки мобильного приложения. Всё чётко, в срок, с вниманием к деталям. Рекомендую.»</p>
               <footer>
                 <img src="assets/img/avatars/avatar2.jpg" srcset="assets/img/avatars/avatar2@2x.jpg 2x" alt="Иван Смирнов" class="testimonial__avatar" loading="lazy" width="60" height="60">
-                <cite>Иван Смирнов, основатель FitLife</cite>
+                <cite>Сергей, основатель FitLife</cite>
               </footer>
             </blockquote>
           </div>
@@ -336,17 +342,17 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__left">
-        <p class="footer__copyright">&copy; 2025 NexaForge. Все права защищены.</p>
+        <p class="footer__copyright">&copy; 2025 Поморсофт. Все права защищены.</p>
         <p class="footer__domain">pomorsoft.ru</p>
       </div>
       <div class="footer__socials">
-        <a href="https://vk.com/nexaforge" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.725 0 0 3.725 0 8.316v7.368C0 20.275 3.725 24 8.316 24h7.368C20.275 24 24 20.275 24 15.684V8.316C24 3.725 20.275 0 15.684 0zm3.692 16.372h-2.346c-.405 0-.524-.315-.524-.315s-.373-.993-.872-1.894c-.86-.864-1.206-.904-1.354-.904-.243 0-.308.09-.308.555v1.77c0 .394-.13.63-1.172.63-1.72 0-3.618-.995-4.956-2.872-2.083-2.886-2.615-5.053-2.615-5.5 0-.216.09-.408.49-.408h2.345c.37 0 .508.17.58.555.645 1.88 1.72 3.526 2.167 3.526.167 0 .243-.08.243-.56V7.155c-.05-.5-.29-.725-.57-.725-.28 0 .17-.494.73-.494h2.625c.487 0 .583.254.583.514v2.773c0 .485.196.61.316.61.167 0 .308-.098.615-.611.49-.858.84-2.253.84-2.253s.09-.203.367-.203h2.408s.707.07.707.54c0 .27-.554 1.795-2.373 3.822-1.756 1.958-1.756 1.796-.437 2.99 1.218 1.1 1.466 1.64 1.506 1.71.45.78-.98.78-.98.78z"/></svg>
+        <a href="https://vk.com/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C3.725 0 0 3.725 0 8.316v7.368C0 20.275 3.725 24 8.316 24h7.368C20.275 24 24 20.275 24 15.684V8.316C24 3.725 20.275 0 15.684 0zm3.692 16.372h-2.346c-.405 0-.524-.315-.524-.315s-.373-.993-.872-1.894c-.86-.864-1.206-.904-1.354-.904-.243 0-.308.09-.308.555v1.77c0 .394-.13.63-1.172.63-1.72 0-3.618-.995-4.956-2.872-2.083-2.886-2.615-5.053-2.615-5.5 0-.216.09-.408.49-.408h2.345c.37 0 .508.17.58.555.645 1.88 1.72 3.526 2.167 3.526.167 0 .243-.08.243-.56V7.155c-.05-.5-.29-.725-.57-.725-.28 0 .17-.49.73-.494h2.625c.487 0 .583.254.583.514v2.773c0 .485.196.61.316.61.167 0 .308-.098.615-.611.49-.858.84-2.253.84-2.253s.09-.203.367-.203h2.408s.707.07.707.54c0 .27-.554 1.795-2.373 3.822-1.756 1.958-1.756 1.796-.437 2.99 1.218 1.1 1.466 1.64 1.506 1.71.45.78-.98.78-.98.78z"/></svg>
         </a>
-        <a href="https://t.me/nexaforge" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <a href="https://t.me/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.12l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>
         </a>
-        <a href="https://max.ru/nexaforge" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+        <a href="https://max.ru/pomorsoft" target="_blank" rel="noopener noreferrer" aria-label="MAX">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="white">M</text></svg>
         </a>
         <a href="mailto:hello@pomorsoft.ru" aria-label="Написать email">
@@ -378,3 +384,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+      
